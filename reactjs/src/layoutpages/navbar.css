@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-:root { --font-heading:'Playfair Display',serif; --font-ui:'Poppins',sans-serif; --font-brand:'Great Vibes',cursive; --nav-accent:#d52873; --nav-accent-soft:#ffb6cc; --nav-accent-soft2:#ffd9e6; --nav-shadow:0 6px 28px -10px rgba(213,40,115,0.35),0 4px 14px -6px rgba(0,0,0,0.25); }
 @import url('https://fonts.googleapis.com/css2?family=Miss+Fajardose&display=swap');
+
+:root { --font-heading:'Playfair Display',serif; --font-ui:'Poppins',sans-serif; --font-brand:'Great Vibes',cursive; --nav-accent:#d52873; --nav-accent-soft:#ffb6cc; --nav-accent-soft2:#ffd9e6; --nav-shadow:0 6px 28px -10px rgba(213,40,115,0.35),0 4px 14px -6px rgba(0,0,0,0.25); }
 
 /* Refine container: lighter border, glass, smaller padding */
 .container {

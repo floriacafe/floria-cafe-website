@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./contact.css";
 import Loadingscreen from "../layoutpages/Loadingscreen";
 
@@ -13,15 +13,7 @@ const Contact = () => {
   const instagramLink = `https://instagram.com/${instagramHandle}`;
   const facebookLink = `https://m.me/${facebookPage}`;
 
-  // Load <model-viewer> once
-  useEffect(() => {
-    if (!customElements.get("model-viewer")) {
-      const script = document.createElement("script");
-      script.type = "module";
-      script.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
-      document.head.appendChild(script);
-    }
-  }, []);
+  // model-viewer is registered globally in src/main.jsx via `import '@google/model-viewer'`.
 
   return (
     <>

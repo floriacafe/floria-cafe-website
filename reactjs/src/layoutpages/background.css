@@ -1,0 +1,26 @@
+body {
+    background: radial-gradient(
+     circle at 50% 50%,
+     #fdd4e1 0%, #d9b3bf 40%,
+     #f48fb1 80%, #f06292 100%);
+}
+html {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+.bg-ballpit {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-ballpit canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+

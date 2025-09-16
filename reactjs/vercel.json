@@ -1,18 +1,19 @@
 {
   "version": 2,
-  "routes": [
-    { "handle": "filesystem" },
-    
-    { "src": "^/Floria-pics/(.*)$", "dest": "/floria-pics/$1" },
-    { "src": "^/FLORIA-pics/(.*)$", "dest": "/floria-pics/$1" },
-    
-    { "src": "^/Models/(.*)$", "dest": "/models/$1" },
-    { "src": "^/Assets/(.*)$", "dest": "/assets/$1" },
-    { "src": "^/ASSETS/(.*)$", "dest": "/assets/$1" },
-    
-    { "src": "^/.*\\.(?:png|jpe?g|gif|svg|webp|ico|css|js|map|txt|json|webmanifest|woff2?|ttf|eot|mp4|webm|gltf|glb|obj|mtl|fbx|dae|3ds|stl|ply|drc|hdr|exr|ktx2|basis)$", "status": 404 },
-    
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/Floria-pics/:path*", "destination": "/floria-pics/:path*" },
+    { "source": "/FLORIA-pics/:path*", "destination": "/floria-pics/:path*" },
+
+    { "source": "/Models/:path*", "destination": "/models/:path*" },
+    { "source": "/Assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/ASSETS/:path*", "destination": "/assets/:path*" },
+
+    {
+      "source": "/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "text/html" }],
+      "missing": [{ "type": "file", "name": ":path*" }],
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {

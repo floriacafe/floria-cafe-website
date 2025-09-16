@@ -1,9 +1,0 @@
-{
-  "buildCommand": "cd reactjs && npm install && npm run build",
-  "installCommand": "cd reactjs && npm install",
-  "outputDirectory": "reactjs/dist",
-  "framework": null,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}

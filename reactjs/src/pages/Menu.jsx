@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Menucard from "../blocks/Menucard";
 import "./menu.css";
 import Loadingscreen from "../layoutpages/Loadingscreen";
@@ -236,6 +236,15 @@ const Menu = () => {
         setFilteredMenu(results);
     }, [searchTerm]);
 
+    // Ref to scroll to the menu items
+    const contentRef = useRef(null);
+
+    // Click handler: set search and scroll to items
+    const handleCategoryClick = (categoryName) => {
+        setSearchTerm(categoryName);
+        contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     return (
 
         <>
@@ -281,14 +290,14 @@ const Menu = () => {
                             padding: "8px 18px",
                             borderRadius: "20px",
                             border: "none",
-                            background: "#FFD1DC",
+                            background: "hsla(346, 100%, 91%, 1.00)",
                             color: "#333",
                             fontWeight: 600,
                             fontSize: "1rem",
                             cursor: "pointer",
                             boxShadow: "0 2px 8px rgba(0,0,0,0.06)"
                         }}
-                        onClick={() => setSearchTerm(category.category)}
+                        onClick={() => handleCategoryClick(category.category)}
                     >
                         <span style={{ marginRight: 6 }}>{category.icon}</span>
                         {category.category}
@@ -306,7 +315,7 @@ const Menu = () => {
                 />
             </div>
 
-            <div className="menu-content">
+            <div className="menu-content" ref={contentRef}>
                 {filteredMenu.map((category, index) => (
                     <section key={index} className="menu-category">
                         <h2 className="category-title">

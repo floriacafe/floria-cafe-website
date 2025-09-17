@@ -2,7 +2,7 @@ import "./homepage.css";
 import lovecup from "../assets/love-cup.svg";
 import leaf from "../assets/leaf.svg";
 import award from "../assets/award.svg";
-import CurvedLoop from "../blocks/CurvedLoop";
+import CurvedLoop from "../blocks/Curvedloop";
 import Loadingscreen from "../layoutpages/Loadingscreen";
 import { NavLink } from "react-router-dom";
 
